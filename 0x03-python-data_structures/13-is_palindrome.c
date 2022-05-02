@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 	int len = 0, middle = 0, i = 0, end = 0, r = 0;
 	listint_t *left_node = *head, *right_node = *head, *len_node = *head;
 
-	if (head != NULL)
+	if (*head != NULL)
 	{
 		while (len_node != NULL)
 		{
