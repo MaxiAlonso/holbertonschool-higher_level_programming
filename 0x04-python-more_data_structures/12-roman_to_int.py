@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     num = 0
-    if roman_string is not None:
+    if roman_string is not None and type(roman_string) is str:
         for idx, char in enumerate(roman_string):
             ni = idx + 1  # inext idx
             if char == "I":
