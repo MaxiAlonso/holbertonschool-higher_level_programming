@@ -57,9 +57,9 @@ class Square:
         To set the position
         '''
 
-        if type(value) is not tuple or len(value) != 2 \
-                or type(value[0]) is not int or type(value[1]) \
-                is not int or value[0] < 0 or value[1] < 0:
+        if (type(value) is not tuple) or (len(value) != 2) \
+                or (type(value[0]) is not int) or (type(value[1]) \
+                is not int) or (value[0] < 0) or (value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -79,8 +79,7 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            if self.__position[1] > 0:
-                for row_spaces in range(self.__position[1]):
+            for row_spaces in range(self.__position[1]):
                     print()
             for width in range(self.__size):
                 for col_spaces in range(self.__position[0]):
