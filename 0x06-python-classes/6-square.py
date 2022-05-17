@@ -78,10 +78,11 @@ class Square:
         if self.__size == 0:
             print()
         else:
+            for row_spaces in range(self.__position[1]):
+                print()
             for width in range(self.__size):
-                if self.__position[1] == 0:
-                    for spaces in range(self.__position[0]):
-                        print(" ", end="")
+                for col_spaces in range(self.__position[0]):
+                    print(" ", end="")
                 for heigth in range(self.__size):
                     print("#", end="")
                 print()
