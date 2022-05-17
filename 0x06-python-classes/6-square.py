@@ -57,11 +57,12 @@ class Square:
         To set the position
         '''
 
-        if type(value) is tuple and len(value) == 2 and type(value[0]) is int\
-           and type(value[1]) is int and value[0] >= 0 and value[1] >= 0:
-            self.__position = value
-        else:
+        if type(value) is not tuple or len(value) != 2 \
+                or type(value[0]) is not int or type(value[1]) \
+                is not int or value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
 
     def area(self):
         '''
