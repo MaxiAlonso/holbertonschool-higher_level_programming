@@ -18,7 +18,7 @@ class Square:
         keep it privately is one of the ways to have the control of size.
         '''
 
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
