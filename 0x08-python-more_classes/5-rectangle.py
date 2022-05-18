@@ -83,8 +83,9 @@ class Rectangle:
             for h in range(self.__height):
                 for w in range(self.__width):
                     recstr += "#"
+                if h < self.__height - 1:
                     recstr += "\n"
-        return recstr[:-1]
+        return recstr
 
     def __repr__(self):
         '''
@@ -93,9 +94,9 @@ class Rectangle:
 
         return f"Rectangle({self.__width}, {self.__height})"
 
-    def __del__(safe):
+    def __del__(self):
         '''
         Deletes a rectangle and print Bye rectangle...
         '''
 
-    print("Bye rectangle...")
+        print("Bye rectangle...")
