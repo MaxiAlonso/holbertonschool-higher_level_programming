@@ -30,6 +30,7 @@ class Rectangle:
         '''
         To set the width
         '''
+
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -49,6 +50,7 @@ class Rectangle:
         '''
         To set the height
         '''
+
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -67,6 +69,7 @@ class Rectangle:
         '''
         Calculates and return the perimeter of a rectangle
         '''
+
         perimeter = 0
         if self.__width > 0 and self.__height > 0:
             perimeter = (self.__width + self.__height) * 2
@@ -76,6 +79,7 @@ class Rectangle:
         '''
         Prints the rectangle with the character #
         '''
+
         recstr = ""
         if self.__width > 0 and self.__height > 0:
             for h in range(self.__height):
