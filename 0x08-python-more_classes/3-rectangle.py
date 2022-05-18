@@ -73,6 +73,9 @@ class Rectangle:
         return perimeter
 
     def __str__(self):
+        '''
+        Prints the rectangle with the character #
+        '''
         recstr = ""
         if self.__width > 0 and self.__height > 0:
             for h in range(self.__height):
