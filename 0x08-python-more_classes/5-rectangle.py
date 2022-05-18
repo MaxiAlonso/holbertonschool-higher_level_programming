@@ -96,7 +96,7 @@ class Rectangle:
 
     def __del__(safe):
         '''
-        Deletes a rectangle and prints Bye rectangle...
+        Deletes a rectangle and print Bye rectangle...
         '''
 
     print("Bye rectangle...")
