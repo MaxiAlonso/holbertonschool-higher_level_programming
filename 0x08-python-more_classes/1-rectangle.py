@@ -30,6 +30,7 @@ class Rectangle:
         '''
         To set the width
         '''
+
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -49,6 +50,7 @@ class Rectangle:
         '''
         To set the height
         '''
+
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
