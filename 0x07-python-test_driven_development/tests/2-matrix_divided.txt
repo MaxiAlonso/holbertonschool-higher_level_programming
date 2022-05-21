@@ -1,6 +1,6 @@
-=========================
-Test for 0-add_integer.py
--------------------------
+============================
+Test for 2-matrix_divided.py
+----------------------------
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
