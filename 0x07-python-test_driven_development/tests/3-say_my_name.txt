@@ -10,7 +10,7 @@ My name is Maximiliano Alonso
 >>> say_my_name("Maximiliano", "")
 My name is Maximiliano 
 
->>> say_my_name("Maximiliano", 2)
+>>> say_my_name("Maximiliano", 3)
 Traceback (most recent call last):
 TypeError: last_name must be a string
 
