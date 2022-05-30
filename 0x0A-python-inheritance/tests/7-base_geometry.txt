@@ -39,3 +39,13 @@ TypeError: integer_validator() takes 3 positional arguments but 4 were given
 >>> base.integer_validator(33)
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> base = BaseGeometry()
+>>> base.integer_validator("None", None)
+Traceback (most recent call last):
+TypeError: None must be an integer
+
+>>> base = BaseGeometry()
+>>> base.integer_validator("string", "hello!")
+Traceback (most recent call last):
+TypeError: string must be an integer
