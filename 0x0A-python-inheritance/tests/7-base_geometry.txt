@@ -36,7 +36,7 @@ Traceback (most recent call last):
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
 >>> base = BaseGeometry()
->>> base.integer_validator(33)
+>>> base.integer_validator("33")
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
@@ -79,3 +79,7 @@ TypeError: tuple must be an integer
 >>> base.integer_validator("dict", {"3": 2})
 Traceback (most recent call last):
 TypeError: dict must be an integer
+
+>>> base.integer_validator("set", {3, 4})
+Traceback (most recent call last):
+TypeError: set must be an integer
