@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/ume} must be greater than 0"f"{name} must be greater than 0"sr/bin/python3
 """
 Class BaseGeometry
 """
