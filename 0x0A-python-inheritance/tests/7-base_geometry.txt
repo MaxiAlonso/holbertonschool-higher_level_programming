@@ -60,4 +60,12 @@ TypeError: bool must be an integer
 Traceback (most recent call last):
 TypeError: list must be an integer
 
+>>> base = BaseGeometry()
+>>> base.integer_validator("tuple", "(3, 2, 1)")
+Traceback (most recent call last):
+TypeError: tuple must be an integer
 
+>>> base = BaseGeometry()
+>>> base.integer_validator("dict", "{3, 2, 1}")
+Traceback (most recent call last):
+TypeError: dic must be an integer
