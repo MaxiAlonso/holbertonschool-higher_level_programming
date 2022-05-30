@@ -66,7 +66,7 @@ Traceback (most recent call last):
 TypeError: bool must be an integer
 
 >>> base = BaseGeometry()
->>> base.integer_validator("list", "[3, 2, 1]")
+>>> base.integer_validator("list", [3, 2, 1])
 Traceback (most recent call last):
 TypeError: list must be an integer
 
