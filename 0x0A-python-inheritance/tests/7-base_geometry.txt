@@ -6,6 +6,9 @@ Test for 7-base_geometry.py
 
 >>> base = BaseGeometry()
 >>> base.integer_validator("int number", 12)
+
+>>> base = BaseGeometry()
+>>> base.integer_validator("int number", 3333333)
      
 >>> base = BaseGeometry()
 >>> base.integer_validator("int number", -3)
@@ -36,4 +39,3 @@ TypeError: integer_validator() takes 3 positional arguments but 4 were given
 >>> base.integer_validator(33)
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
-
