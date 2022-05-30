@@ -68,4 +68,4 @@ TypeError: tuple must be an integer
 >>> base = BaseGeometry()
 >>> base.integer_validator("dict", "{3, 2, 1}")
 Traceback (most recent call last):
-TypeError: dic must be an integer
+TypeError: dict must be an integer
