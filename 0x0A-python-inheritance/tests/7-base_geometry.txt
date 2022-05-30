@@ -5,25 +5,25 @@ Test for 7-base_geometry.py
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 >>> base = BaseGeometry()
->>> base.integer_validator("int number", 12)
+>>> base.integer_validator("intnumber", 12)
 
 >>> base = BaseGeometry()
->>> base.integer_validator("int number", 3333333)
+>>> base.integer_validator("intnumber", 3333333)
      
 >>> base = BaseGeometry()
->>> base.integer_validator("int number", -3)
+>>> base.integer_validator("intnumber", -3)
 Traceback (most recent call last):
-ValueError: int number must be greater than 0
+ValueError: intnumber must be greater than 0
 
 >>> base = BaseGeometry()
->>> base.integer_validator("int number", 0)
+>>> base.integer_validator("intnumber", 0)
 Traceback (most recent call last):
-ValueError: int number must be greater than 0
+ValueError: intnumber must be greater than 0
 
 >>> base = BaseGeometry()
->>> base.integer_validator("float number", 3.333)
+>>> base.integer_validator("floatnumber", 3.333)
 Traceback (most recent call last):
-TypeError: float number must be an integer
+TypeError: floatnumber must be an integer
 
 >>> base = BaseGeometry()
 >>> base.area()
