@@ -10,11 +10,19 @@ class Student:
     """
 
     def __init__(self, first_name, last_name, age):
+        """
+        Instantiation
+        """
+
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
+        """
+        retrieves a dictionary representation of a Student
+        """
+
         if type(attrs) is list:
             dic = {}
             for at in attrs:
@@ -26,5 +34,9 @@ class Student:
             return (self.__dict__)
 
     def reload_from_json(self, json):
-        for key, value in json.items():
-            self.__dict__[key] = [value]
+        """
+        replaces all attributes of the Student instance
+        """
+
+        self.__dict__.clear()
+        self.__dict__.update(json)
