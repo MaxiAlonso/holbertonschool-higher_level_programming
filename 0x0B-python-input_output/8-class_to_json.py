@@ -7,4 +7,8 @@ for JSON serialization of an object
 
 
 def class_to_json(obj):
+    """
+    Class to json
+    """
+
     return obj.__dict__
