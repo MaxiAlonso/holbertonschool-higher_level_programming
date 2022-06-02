@@ -5,6 +5,7 @@ Rectangle Class
 
 
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -129,5 +130,18 @@ class Rectangle(Base):
         Returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
 
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
-                - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """
+        Assigns an argument to each attribute:
+        """
+
+        count = 0
+
+        for key in  self.__dict__:
+            if count >= len(args):
+                break
+            else:
+                self.__dict__[key] = args[count]
+                count += 1
