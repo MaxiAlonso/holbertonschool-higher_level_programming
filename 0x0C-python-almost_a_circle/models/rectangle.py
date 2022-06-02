@@ -129,8 +129,9 @@ class Rectangle(Base):
         """
         Returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        part1 = f"({self.id}) {self.__x}/{self.__y}"
+        part2 = f"{self.__width}/{self.__height}"
+        return f"[Rectangle] {part1} - {part2}"
 
     def update(self, *args):
         """
@@ -139,7 +140,7 @@ class Rectangle(Base):
 
         count = 0
 
-        for key in  self.__dict__:
+        for key in self.__dict__:
             if count >= len(args):
                 break
             else:
