@@ -43,3 +43,23 @@ class Square(Rectangle):
         """
 
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
+    def update(self, *args, **kwargs):
+        """
+        Assigns an argument to each attribute:
+        """
+
+        count = 0
+
+        if args is not None and len(args) != 0:
+            for key in self.__dict__:
+                if count >= len(args):
+                    break
+                if key == "_Rectangle__height":
+                    continue
+                else:
+                    setattr(self, key, args[count])
+                    count += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
