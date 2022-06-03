@@ -133,16 +133,20 @@ class Rectangle(Base):
         part2 = f"{self.__width}/{self.__height}"
         return f"[Rectangle] {part1} - {part2}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Assigns an argument to each attribute:
         """
 
         count = 0
 
-        for key in self.__dict__:
-            if count >= len(args):
-                break
-            else:
-                self.__dict__[key] = args[count]
-                count += 1
+        if args is not None and len(args) != 0:
+            for key in self.__dict__:
+                if count >= len(args):
+                    break
+                else:
+                    self.__dict__[key] = args[count]
+                    count += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
