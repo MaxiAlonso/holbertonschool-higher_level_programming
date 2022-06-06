@@ -5,6 +5,7 @@ Bass class
 
 
 import json
+import csv
 
 
 class Base:
@@ -104,4 +105,43 @@ class Base:
         except FileNotFoundError:
             pass
 
+        return new_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        serializes to a file in CSV format
+        """
+
+        file_name = cls.__name__ + ".csv"
+        new_list = []
+
+        if cls.__name__ == "Rectangle":
+            attributes = ["id", "width", "height", "x", "y"]
+        if cls.__name__ == "Square":
+            attributes = ["id", "size", "x", "y"]
+        for obj in list_objs:
+            new_list.append(cls.to_dictionary(obj))
+
+        with open(file_name, 'w') as f:
+            writer = csv.DictWriter(f, fieldnames=attributes)
+            writer.writeheader()
+            writer.writerows(new_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        deserializes from a csv file
+        """
+
+        new_list = []
+        file_name = cls.__name__ + ".csv"
+        try:
+            with open(file_name, "r") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    dic = {key: int(val) for key, val in row.items()}
+                    new_list.append(cls.create(**dic))
+        except FileNotFoundError:
+            pass
         return new_list
