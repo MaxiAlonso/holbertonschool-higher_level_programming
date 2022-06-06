@@ -54,6 +54,22 @@ class TestBase(unittest.TestCase):
             new_list = Base.from_json_string(read)
             self.assertEqual(new_list, [])
 
+        Base._Base__nb_objects = 0
+        rec = Rectangle(1, 2, 3, 4, 5)
+        Rectangle.save_to_file([rec])
+        with open("Rectangle.json", "r") as f:
+             read = f.read()
+             new_list = Base.from_json_string(read)
+             self.assertEqual(new_list, [{'id': 5, 'width': 1, 'height': 2, 'x': 3, 'y': 4}])
+
+        Base._Base__nb_objects = 0
+        sq = Square(1, 2, 3, 4)
+        Square.save_to_file([sq])
+        with open("Square.json", "r") as f:
+             read = f.read()
+             new_list = Base.from_json_string(read)
+             self.assertEqual(new_list, [{'id': 4, 'size': 1, 'x': 2, 'y': 3}])
+
     def test_from_json_string(self):
         """
         test from_json_string method
@@ -76,3 +92,20 @@ class TestBase(unittest.TestCase):
         Base.save_to_file(None)
         new_list = Base.load_from_file()
         self.assertEqual(new_list, [])
+
+    def test_create(self):
+        """
+        test create method
+        """
+        
+        rec = Rectangle(1, 2, 3, 4, 5)
+        rec_dict = rec.to_dictionary()
+        rec_new = Rectangle.create(**rec_dict)
+        self.assertEqual("[Rectangle] (5) 3/4 - 1/2", str(rec))
+        self.assertEqual("[Rectangle] (5) 3/4 - 1/2", str(rec_new))
+
+        sq = Square(1, 2, 3, 4)
+        sq_dict = sq.to_dictionary()
+        sq_new = Square.create(**sq_dict)
+        self.assertEqual("[Square] (4) 2/3 - 1", str(sq))
+        self.assertEqual("[Square] (4) 2/3 - 1", str(sq_new))  
