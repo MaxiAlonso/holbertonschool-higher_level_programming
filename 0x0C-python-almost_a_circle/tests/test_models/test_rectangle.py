@@ -1,15 +1,16 @@
-"""Unifor Rectangle class"""
-import unittest
-from models.base import Base
-from models.rectangle import Rectangle
+"""
+Unittest for rectangle class
+"""
 
+import unittest
+from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """
     Tests ractangle class
     """
 
-    def test_(self):
+    def test_attributes(self):
         """
         Test attributes
         """
@@ -25,7 +26,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.height, 2)
         self.assertEqual(rec.x, 0)
         self.assertEqual(rec.y, 0)
-        self.assertEqual(rec.id, 1) 
+        self.assertEqual(rec.id, 2) 
 
     def test_Errors(self):
         """
