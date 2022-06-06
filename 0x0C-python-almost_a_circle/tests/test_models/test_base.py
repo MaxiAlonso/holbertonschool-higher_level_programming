@@ -28,7 +28,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b5.id, 2)
 
 
-    def test_json_string(self):
+    def test_to_json_string(self):
         """
         test to_json_string method
         """
@@ -53,3 +53,26 @@ class TestBase(unittest.TestCase):
             read = f.read()
             new_list = Base.from_json_string(read)
             self.assertEqual(new_list, [])
+
+    def test_from_json_string(self):
+        """
+        test from_json_string method
+        """
+
+        Base._Base__nb_objects = 0
+        obj = Base(33)
+        string = [{'id': 33}]
+
+        self.assertEqual(string, [{'id': 33}])
+
+    def test_load_form_file(self):
+        """
+        test load_from_file method
+        """
+
+        Base._Base__nb_objects = 0
+        obj = Base(33)
+
+        Base.save_to_file(None)
+        new_list = Base.load_from_file()
+        self.assertEqual(new_list, [])
