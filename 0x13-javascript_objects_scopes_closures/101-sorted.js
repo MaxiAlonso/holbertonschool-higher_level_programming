@@ -6,6 +6,5 @@ for (const key in dict) {
     newDict[dict[key]] = [];
   }
   newDict[dict[key]].push(key);
-  console.log(key);
 }
 console.log(newDict);
