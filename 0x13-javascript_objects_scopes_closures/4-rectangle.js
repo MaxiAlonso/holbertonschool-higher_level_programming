@@ -7,11 +7,15 @@ module.exports = class Rectangle {
     }
   }
 
-  print () {
+  print (c) {
+    this.char = c;
+    if (this.char === undefined) {
+      this.char = 'X';
+    }
     for (let i = 0; i < this.height; i++) {
       let rectangle = '';
       for (let i = 0; i < this.width; i++) {
-        rectangle += 'X';
+        rectangle += this.char;
       }
       console.log(rectangle);
     }
