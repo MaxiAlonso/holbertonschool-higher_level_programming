@@ -6,7 +6,7 @@ from sys import argv
 username = argv[1]
 password = argv[2]
 database = argv[3]
-search = argv[4]
+state = argv[4]
 db = MySQLdb.connect(
         host="localhost",
         user=username,
@@ -15,7 +15,7 @@ db = MySQLdb.connect(
         db=database)
 
 cur = db.cursor()
-cur.execute(f"SELECT * FROM states WHERE name LIKE '{search}'\
+cur.execute(f"SELECT * FROM states WHERE name LIKE '{state}'\
      ORDER BY states.id ASC")
 rows = cur.fetchall()
 for row in rows:
