@@ -2,14 +2,14 @@
 """
 Script that takes in arguments and displays all
 values in the states table of hbtn_0e_0_usa
-where name matches the argument. 
+where name matches the argument.
 Safe from MySQL injections!
 """
 
 import MySQLdb
 from sys import argv
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     username = argv[1]
     password = argv[2]
     database = argv[3]
@@ -22,7 +22,7 @@ if __name__ == "__main__":
             db=database)
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE %s\
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s\
         ORDER BY states.id ASC", [state])
     rows = cur.fetchall()
     for row in rows:
