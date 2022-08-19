@@ -10,7 +10,6 @@ if __name__ == "__main__":
     req = request.Request(url)
     with request.urlopen(req) as response:
         body = response.read()
-        to_print = "Body response:\n\
-    - type: {}\n    - content: {}\n\
-    - utf8 content: {}".format(body.__class__, body, body.decode())
+        to_print = "Body response:\n\t- type: {}\n\t- content: {}\n\t\
+- utf8 content: {}".format(body.__class__, body, body.decode())
         print(to_print)
