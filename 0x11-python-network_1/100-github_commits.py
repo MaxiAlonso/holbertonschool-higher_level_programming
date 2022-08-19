@@ -15,8 +15,8 @@ if __name__ == "__main__":
     dic = response.json()
     new_list = []
     for element in dic:
-        str = "{}".format(element.get('sha'))
-        str += " {}".format(element.get('commit').get('author').get('name'))
+        str = "{}: ".format(element.get('sha'))
+        str += "{}".format(element.get('commit').get('author').get('name'))
         new_list.append(str)
     for i in range(10):
         print(new_list[i])
