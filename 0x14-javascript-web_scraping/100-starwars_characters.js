@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Script that prints the number of movies where the character “Wedge Antilles” is present.
+// Script that prints all characters of a Star Wars movie
 
 const axios = require('axios');
 const args = process.argv;
