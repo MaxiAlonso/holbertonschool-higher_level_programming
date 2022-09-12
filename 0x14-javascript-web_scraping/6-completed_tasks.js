@@ -6,15 +6,15 @@ const args = process.argv;
 axios.get(args[2])
   .then(function (response) {
     const data = response.data;
-    const completed_task = {};
+    const completedTask = {};
     for (let index = 0; index < data.length; index++) {
       if (data[index].completed === true) {
-        if (isNaN(completed_task[data[index].userId])) {
-          completed_task[data[index].userId] = 1;
+        if (isNaN(completedTask[data[index].userId])) {
+          completedTask[data[index].userId] = 1;
         } else {
-          completed_task[data[index].userId] = completed_task[data[index].userId] + 1;
+          completedTask[data[index].userId] = completedTask[data[index].userId] + 1;
         }
       }
     }
-    console.log(completed_task);
+    console.log(completedTask);
   });
