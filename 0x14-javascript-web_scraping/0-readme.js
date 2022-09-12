@@ -1,14 +1,12 @@
 #!/usr/bin/node
-const fs = require('fs').promises;
+// Script that reads and prints the content of a file.
 
+const fs = require('fs');
 const args = process.argv;
-async function readFile (filePath) {
-  try {
-    const data = await fs.readFile(filePath, 'utf8');
-    console.log(data.toString());
-  } catch (error) {
-    console.dir(error);
-  }
-}
 
-readFile(args[2]);
+fs.readFile(args[2], 'utf8', function (error, data) {
+  if (error) {
+    return console.error(error);
+  }
+  console.log(data.toString());
+});
