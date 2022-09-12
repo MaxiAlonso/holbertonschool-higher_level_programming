@@ -1,15 +1,16 @@
 #!/usr/bin/node
-// script that prints the number of movies where the character “Wedge Antilles” is present
-const arg = process.argv;
-const axios = require('axios');
+// Script that prints the number of movies where the character “Wedge Antilles” is present.
 
-axios
-  .get(arg[2])
-  .then(res => {
+const axios = require('axios');
+const args = process.argv;
+axios.get(args[2])
+  .then(function (response) {
+    const films = response.data.results;
     let count = 0;
-    for (const data of res.data.results) {
-      for (const id of data.characters) {
-        if (id.endsWith('18/')) {
+    for (let index = 0; index < films.length; index++) {
+      const characters = films[index].characters;
+      for (let index2 = 0; index2 < characters.length; index2++) {
+        if (characters[index2].includes('18')) {
           count++;
         }
       }
