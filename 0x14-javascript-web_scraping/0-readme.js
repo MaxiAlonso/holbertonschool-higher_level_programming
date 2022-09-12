@@ -2,12 +2,12 @@
 const fs = require('fs').promises;
 
 const args = process.argv;
-async function readFile(filePath) {
+async function readFile (filePath) {
   try {
-    const data = await fs.readFile(filePath);
+    const data = await fs.readFile(filePath, 'utf8');
     console.log(data.toString());
   } catch (error) {
-    console.dir(error)
+    console.dir(error);
   }
 }
 
