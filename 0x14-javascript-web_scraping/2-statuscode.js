@@ -6,8 +6,8 @@ const args = process.argv;
 
 axios.get(args[2])
   .then(function (response) {
-    console.log('Code: ' + response.status);
+    console.log('code: ' + response.status);
   })
   .catch(function (error) {
-    console.log('Code: ' + error.response.status);
+    console.log('code: ' + error.response.status);
   });
