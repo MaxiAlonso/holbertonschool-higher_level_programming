@@ -7,13 +7,10 @@ axios.get(args[2])
   .then(function (response) {
     const films = response.data.results;
     let count = 0;
-    for (let idx = 0; idx < films.length; idx++) {
+    for (let idx = 0; films[idx]; idx++) {
       if (films[idx].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
         count++;
       }
     }
     console.log(count);
-  })
-  .catch(error => {
-    console.log('code:', error.response.status);
   });
