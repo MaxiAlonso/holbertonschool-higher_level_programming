@@ -10,7 +10,7 @@ axios.get(args[2])
     for (let index = 0; index < films.length; index++) {
       const characters = films[index].characters;
       for (let index2 = 0; index2 < characters.length; index2++) {
-        if (characters[index2].includes('https://swapi-api.hbtn.io/api/people/18/')) {
+        if (characters[index2].includes('18')) {
           count++;
         }
       }
